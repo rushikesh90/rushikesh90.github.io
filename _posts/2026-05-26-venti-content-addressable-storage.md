@@ -46,3 +46,24 @@ Instead of identifying blocks by **location**, identify them by:
 
 ```text
 Block ID = HASH(block contents)
+```
+
+If the same block appears again, it maps to the same identifier and does not need to be stored twice. That simple shift from location-based naming to content-based naming is the foundation for many modern backup and archival systems.
+
+## Why It Matters
+
+Venti made three ideas feel practical:
+
+1. Content-addressed blocks make deduplication natural.
+2. Immutable storage turns historical versions into ordinary references instead of fragile overwrite chains.
+3. Snapshot metadata can describe whole file trees while reusing unchanged blocks.
+
+For backup systems, this changes the shape of the problem. Instead of asking where a block lives, the system asks whether it has already seen that content before.
+
+## Modern Echoes
+
+You can see the same pattern in systems that use object hashes, chunk hashes, immutable snapshots, or append-only repositories. The implementation details vary, but the design pressure is similar: make identity depend on content, keep history cheap, and avoid rewriting old state.
+
+## Takeaway
+
+Venti is useful to study because it connects a clean storage abstraction to real backup-system behavior. The paper is old, but the core idea still shows up anywhere engineers need reliable retention, efficient restores, and strong protection against accidental mutation.

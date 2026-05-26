@@ -1,0 +1,8 @@
+title: Rushikesh Deshpande
+description: Notes on storage, distributed systems, and backend engineering.
+url: "https://rushikesh90.github.io"
+baseurl: ""
+permalink: /:year/:month/:day/:title.html
+
+markdown: kramdown
+future: true
