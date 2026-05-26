@@ -7,8 +7,6 @@ tags: [venti, dedupe, content-addressable-storage, backup, snapshots]
 toc: true
 ---
 
-# Venti (2002): The Storage Paper That Predicted Modern Backup Systems
-
 Modern backup systems talk about:
 
 - Deduplication
@@ -28,7 +26,7 @@ FAST 2002
 
 ---
 
-# The Problem With Traditional Backups
+## The Problem With Traditional Backups
 
 Traditional tape backups had several issues:
 
