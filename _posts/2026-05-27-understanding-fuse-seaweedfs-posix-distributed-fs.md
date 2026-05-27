@@ -7,8 +7,6 @@ tags: [fuse, seaweedfs, filesystem, distributed-storage, golang]
 toc: true
 ---
 
-# Understanding FUSE: How SeaweedFS Becomes a POSIX Distributed Filesystem
-
 Most engineers see SeaweedFS as:
 
 - Object Storage (S3 compatible)

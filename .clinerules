@@ -1,0 +1,29 @@
+# Blog Post Rules
+
+## Title Duplication
+
+The `_layouts/post.html` template renders the page title as an `<h1>` heading automatically.
+
+**Do NOT** include an `#` heading (H1) at the start of a post body that duplicates the `title:` field from front matter. This would produce two identical `<h1>` elements on the rendered page.
+
+✅ Correct — post body starts with paragraph text or an `##` H2 heading:
+```markdown
+---
+layout: post
+title: "Some Great Title"
+---
+
+Some introductory paragraph...
+```
+
+❌ Wrong — post body starts with a duplicate H1:
+```markdown
+---
+layout: post
+title: "Some Great Title"
+---
+
+# Some Great Title
+```
+
+If you need a leading heading-level title within the body, use `##` (H2) instead of `#` (H1). The only H1 on the page should come from the layout.
