@@ -7,16 +7,13 @@ title: Home
 
 Deep-dive technical articles about **storage systems**, **distributed systems**, and **backend engineering** — filesystems, object stores, distributed architectures, and the engineering decisions behind them.
 
-Currently tracking SeaweedFS internals, content-addressable storage, and POSIX filesystem design.
+I write about how storage systems work under the hood, tracking internals of SeaweedFS, content-addressable storage, FUSE filesystems, and POSIX distributed filesystem design.
 
 ---
 
-## Posts
+### Posts
 
-{% for post in site.posts %}
-- [**{{ post.title }}**]({{ post.url | relative_url }})  
-  {{ post.date | date: "%B %-d, %Y" }} · {% for tag in post.tags %}`{{ tag }}` {% endfor %}
-{% endfor %}
+All articles are listed on the [blog](/blog/) page.
 
 ---
 

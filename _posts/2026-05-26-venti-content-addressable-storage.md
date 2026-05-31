@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Venti (2002): The Storage Paper That Predicted Modern Backup Systems"
+title: "Before Immutable Backups and Dedupe: The Venti Paper That Saw It Coming"
 date: 2026-05-26
 categories: [storage, backup, distributed-systems]
 tags: [venti, dedupe, content-addressable-storage, backup, snapshots]
