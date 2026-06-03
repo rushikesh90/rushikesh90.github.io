@@ -92,6 +92,16 @@
             padding: 16px;
         }
 
+        .site-nav a {
+            color: var(--ink);
+            text-decoration: none;
+            margin-left: 16px;
+            font-weight: 600;
+        }
+        .site-nav a:hover {
+            color: var(--accent);
+        }
+
         pre code {
             padding: 0;
         }
@@ -100,6 +110,11 @@
 <body>
     <header class="site-header">
         <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+        <nav class="site-nav">
+            {% for link in site.data.navigation.main %}
+                <a href="{{ link.url | relative_url }}">{{ link.title }}</a>
+            {% endfor %}
+        </nav>
         <a href="https://github.com/rushikesh90/rushikesh90.github.io">GitHub</a>
     </header>
 

@@ -3,6 +3,78 @@ description: Notes on storage, distributed systems, and backend engineering.
 url: "https://rushikesh90.github.io"
 baseurl: ""
 permalink: /:year/:month/:day/:title.html
-
 markdown: kramdown
 future: true
+remote_theme: "academicpages/academicpages.github.io"
+
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /projects/:path/
+  experience:
+    output: true
+    permalink: /experience/:path/
+  education:
+    output: true
+    permalink: /education/:path/
+  news:
+    output: true
+    permalink: /news/:path/
+
+# Defaults
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
+  # _pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+  # _projects
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: single
+      author_profile: true
+      share: true
+      comments: true
+  # _experience
+  - scope:
+      path: ""
+      type: experience
+    values:
+      layout: single
+      author_profile: true
+      share: true
+      comments: true
+  # _education
+  - scope:
+      path: ""
+      type: education
+    values:
+      layout: single
+      author_profile: true
+      share: true
+      comments: true
+  # _news
+  - scope:
+      path: ""
+      type: news
+    values:
+      layout: single
+      author_profile: true
+      share: true
+      comments: true
