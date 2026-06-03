@@ -7,9 +7,9 @@ main:
     url: /experience/
   - title: "Education"
     url: /education/
-  - title: "Projects"
-    url: /projects/
   - title: "Talks"
     url: /talks/
   - title: "Publications"
     url: /publications/
+  - title: "Resources"
+    url: /resources/

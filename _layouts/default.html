@@ -1,26 +1,31 @@
 ---
-layout: base
+layout: compress
 ---
 
-# Rushikesh Deshpande
+{% include base_path %}
 
-Deep-dive technical articles about **storage systems**, **distributed systems**, and **backend engineering** — filesystems, object stores, distributed architectures, and the engineering decisions behind them.
+<!doctype html>
+<html lang="{{ site.locale | slice: 0,2 }}" class="no-js"{% if site.site_theme == "dark" %} data-theme="dark"{% endif %}>
+  <head>
+    {% include head.html %}
+    {% include head/custom.html %}
+  </head>
 
-I write about how storage systems work under the hood, tracking internals of SeaweedFS, content-addressable storage, FUSE filesystems, and POSIX distributed filesystem design.
+  <body>
 
----
+    {% include browser-upgrade.html %}
+    {% include masthead.html %}
 
-### Posts
+    {{ content }}
 
-All articles are listed on the [blog](/blog/) page.
+    <div class="page__footer">
+      <footer>
+        {% include footer/custom.html %}
+        {% include footer.html %}
+      </footer>
+    </div>
 
----
+    {% include scripts.html %}
 
-### Upcoming Topics
-
-- SeaweedFS Filer Architecture
-- Chunk Storage Internals
-- Volume Server Design
-- Distributed Locking in SeaweedFS FUSE
-- Metadata Backends Explained
-- Replication and Placement Strategies
+  </body>
+</html>

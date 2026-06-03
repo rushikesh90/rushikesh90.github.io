@@ -1,14 +1,75 @@
-title: Rushikesh Deshpande
-description: Notes on storage, distributed systems, and backend engineering.
+locale: "en-US"
+site_theme: "default"
+title: "Rushikesh Deshpande"
+title_separator: "-"
+name: "Rushikesh Deshpande"
+description: "Notes on storage, distributed systems, and backend engineering."
 url: "https://rushikesh90.github.io"
 baseurl: ""
-permalink: /:year/:month/:day/:title.html
-markdown: kramdown
-future: true
-remote_theme: "academicpages/academicpages.github.io"
+repository: "rushikesh90/rushikesh90.github.io"
+og_description: "Notes on storage, distributed systems, and backend engineering."
+og_image: ""
 
-# Collections
+author:
+  avatar: "me.jpg"
+  name: "Rushikesh Deshpande"
+  bio: "Notes on storage, distributed systems, and backend engineering."
+  location: ""
+  email: ""
+  github: "rushikesh90"
+  linkedin: ""
+
+social:
+  name: "Rushikesh Deshpande"
+  links:
+    - "https://github.com/rushikesh90"
+    - "https://www.linkedin.com/in/rushikesh90/"
+
+breadcrumbs: false
+words_per_minute: 160
+future: true
+
+# Google Analytics and Webmaster Tools
+google_analytics: ""
+google_site_verification: ""
+bing_site_verification: ""
+alexa_site_verification: ""
+yandex_site_verification: ""
+
+# Social Sharing
+twitter:
+  username: ""
+facebook:
+  username: ""
+  app_id: ""
+  publisher: ""
+og_image: ""
+og_description: ""
+
+# Social Sharing
+twitter:
+  username: ""
+facebook:
+  username: ""
+  app_id: ""
+  publisher: ""
+# For specifying social profiles
+# - https://developers.google.com/structured-data/customize/social-profiles
+
+# Collection Settings
 collections:
+  teaching:
+    output: true
+    permalink: /:collection/:path/
+  publications:
+    output: true
+    permalink: /:collection/:path/
+  portfolio:
+    output: true
+    permalink: /:collection/:path/
+  talks:
+    output: true
+    permalink: /:collection/:path/
   projects:
     output: true
     permalink: /projects/:path/
@@ -18,6 +79,9 @@ collections:
   education:
     output: true
     permalink: /education/:path/
+  news:
+    output: true
+    permalink: /news/:path/
 
 # Defaults
 defaults:
@@ -27,7 +91,8 @@ defaults:
       type: posts
     values:
       layout: single
-      author_profile: true
+      toc: true
+      author_profile: false
       read_time: true
       comments: true
       share: true
@@ -39,6 +104,41 @@ defaults:
     values:
       layout: single
       author_profile: true
+  # _teaching
+  - scope:
+      path: ""
+      type: teaching
+    values:
+      layout: single
+      author_profile: true
+      share: true
+      comments: true
+  # _publications
+  - scope:
+      path: ""
+      type: publications
+    values:
+      layout: single
+      author_profile: true
+      share: true
+      comments: true
+  # _portfolio
+  - scope:
+      path: ""
+      type: portfolio
+    values:
+      layout: single
+      author_profile: true
+      share: true
+      comments: true
+  # _talks
+  - scope:
+      path: ""
+      type: talks
+    values:
+      layout: talk
+      author_profile: true
+      share: true
   # _projects
   - scope:
       path: ""
@@ -46,8 +146,6 @@ defaults:
     values:
       layout: single
       author_profile: true
-      share: true
-      comments: true
   # _experience
   - scope:
       path: ""
@@ -55,14 +153,76 @@ defaults:
     values:
       layout: single
       author_profile: true
-      share: true
-      comments: true
-   # _education
-   - scope:
-       path: ""
-       type: education
-     values:
-       layout: single
-       author_profile: true
-       share: true
-       comments: true
+  # _education
+  - scope:
+      path: ""
+      type: education
+    values:
+      layout: single
+      author_profile: true
+  # _news
+  - scope:
+      path: ""
+      type: news
+    values:
+      layout: single
+      author_profile: false
+
+# Sass/SCSS
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Permalinks
+permalink: /blog/:year/:title/
+timezone: Etc/UTC
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-gist
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-redirect-from
+  - jemoji
+  - jekyll-include-cache
+  - jekyll-scholar
+
+# Whitelist
+whitelist:
+  - jekyll-feed
+  - jekyll-gist
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-redirect-from
+  - jemoji
+  - jekyll-include-cache
+  - jekyll-scholar
+
+# Category & Tag Archives
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
+
+# Compress HTML
+compress_html:
+  clippings: all
+  comments: all
+  endings: []
+  ignore:
+    envs: []
+  ignore_regex: []
+  startings: []
+
+# Exclude from processing.
+exclude:
+  - "Gemfile"
+  - "Gemfile.lock"
+  - "node_modules"
+  - "vendor/bundle/"
+  - "vendor/cache/"
+  - "vendor/gems/"
+  - "vendor/ruby/"
