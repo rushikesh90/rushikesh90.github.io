@@ -9,11 +9,7 @@ main:
     url: /education/
   - title: "Projects"
     url: /projects/
-  - title: "News"
-    url: /news/
   - title: "Talks"
     url: /talks/
   - title: "Publications"
     url: /publications/
-  - title: "Resources"
-    url: /resources/
