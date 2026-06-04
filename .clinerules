@@ -2,14 +2,14 @@
 
 ## Title Duplication
 
-The `_layouts/post.html` template renders the page title as an `<h1>` heading automatically.
+The `_layouts/single.html` template renders the page title as an `<h1>` heading automatically.
 
 **Do NOT** include an `#` heading (H1) at the start of a post body that duplicates the `title:` field from front matter. This would produce two identical `<h1>` elements on the rendered page.
 
 ✅ Correct — post body starts with paragraph text or an `##` H2 heading:
 ```markdown
 ---
-layout: post
+layout: single
 title: "Some Great Title"
 ---
 
@@ -19,7 +19,7 @@ Some introductory paragraph...
 ❌ Wrong — post body starts with a duplicate H1:
 ```markdown
 ---
-layout: post
+layout: single
 title: "Some Great Title"
 ---
 
@@ -27,3 +27,94 @@ title: "Some Great Title"
 ```
 
 If you need a leading heading-level title within the body, use `##` (H2) instead of `#` (H1). The only H1 on the page should come from the layout.
+
+## Front Matter
+
+Every post must include the following front matter fields:
+
+| Field        | Required | Format / Notes                                        |
+|--------------|----------|-------------------------------------------------------|
+| `layout`     | ✅       | Always `single` (shows sidebar and constrained content) |
+| `title`      | ✅       | Double-quoted string                                  |
+| `date`       | ✅       | `YYYY-MM-DD`                                          |
+| `categories` | ✅       | YAML list format. Broad topic buckets.                |
+| `tags`       | ✅       | YAML list format. More specific than categories.      |
+| `toc`        | ✅       | Always `true` (technical posts benefit from a ToC)    |
+
+Example:
+```yaml
+---
+layout: single
+title: "Understanding FUSE: How SeaweedFS Becomes a POSIX Distributed Filesystem"
+date: 2026-05-27
+categories: [storage, distributed-systems, seaweedfs, fuse]
+tags: [fuse, seaweedfs, filesystem, distributed-storage, golang]
+toc: true
+---
+```
+
+Additional fields (`author_profile`, `read_time`, `comments`, `share`, `related`) are set automatically by `_config.yml` defaults and should NOT be duplicated in individual post front matter.
+
+## Filename Convention
+
+Post filenames follow the format:
+```
+YYYY-MM-DD-slug-with-kebab-case.md
+```
+
+- The `date` field in front matter must match the date prefix in the filename.
+- The slug determines the URL path via the `permalink` setting in `_config.yml` (`/blog/:year/:title/`).
+
+✅ Correct:
+```
+2026-05-27-understanding-fuse-seaweedfs-posix-distributed-fs.md
+```
+
+## Code Blocks
+
+- Use fenced code blocks with explicit language specifiers.
+- Common languages used in this repo: `bash`, `text`, `go`, `c`, `python`, `yaml`, `json`, `diff`, `console`, `mermaid`.
+
+```markdown
+```bash
+weed mount \
+    -dir=/mnt/sw \
+    -filer=localhost:8888
+```
+```
+
+## Content Structure
+
+- Start the body with an introductory paragraph (not a heading).
+- Use `##` H2 for major sections, `###` H3 for subsections.
+- Use bold (`**text**`) to highlight key concepts on first mention.
+- Use horizontal rules (`---`) sparingly for major section transitions.
+- Keep paragraphs focused and concise. This is a technical blog — prefer clarity over verbosity.
+- When referencing a paper or external work, include the full citation (authors, venue, year) early in the post.
+
+## Image and Asset Paths
+
+- Place diagrams in `assets/drawio/` (source `.drawio` files).
+- Place rendered images in `assets/img/<topic>/` (subdirectory per topic area).
+- Reference images in posts using relative paths from the repo root:
+  ```markdown
+  ![Alt text]({{ site.url }}/assets/img/topic-name/filename.png)
+  ```
+- Use SVG where possible for diagrams; PNG for screenshots.
+- Name image files descriptively with kebab-case, e.g. `seaweedfs-filer-architecture.png`.
+
+## README Update
+
+After publishing a new post, update the "Published Posts" table in `README.md` with:
+- Date
+- Post title (linked to the published URL)
+- Relevant topic tags
+
+The README serves as the index / table of contents for the blog.
+
+## General Style
+
+- The target audience is engineers familiar with systems / backend concepts.
+- Favor depth over breadth: explore a single concept thoroughly per post.
+- Use concrete examples (code snippets, CLI commands, config files) to illustrate concepts.
+- Tag posts with both broad categories and specific tags for discoverability.

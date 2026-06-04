@@ -1,13 +1,11 @@
 ---
-layout: post
+layout: single
 title: "Setting Up Your Academic Homepage with GitHub Pages: A Beginner's Guide"
 date: 2026-06-03
 categories: [tutorial, github-pages, academic]
 tags: [github-pages, academicpages, jekyll, tutorial]
 toc: true
 ---
-
-# Setting Up Your Academic Homepage with GitHub Pages: A Beginner's Guide
 
 Creating a professional academic homepage is essential for showcasing your research, publications, and academic achievements. GitHub Pages, combined with the popular [academicpages](https://github.com/academicpages/academicpages.github.io) theme, provides a free, easy-to-maintain solution. This tutorial walks you through the entire process step-by-step.
 

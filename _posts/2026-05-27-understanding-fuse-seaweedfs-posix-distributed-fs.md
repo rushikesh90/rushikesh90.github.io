@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title: "Understanding FUSE: How SeaweedFS Becomes a POSIX Distributed Filesystem"
 date: 2026-05-27
 categories: [storage, distributed-systems, seaweedfs, fuse]

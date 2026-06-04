@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title: "Before Immutable Backups and Dedupe: The Venti Paper That Saw It Coming"
 date: 2026-05-26
 categories: [storage, backup, distributed-systems]
