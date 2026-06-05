@@ -34,7 +34,7 @@ Every post must include the following front matter fields:
 
 | Field        | Required | Format / Notes                                        |
 |--------------|----------|-------------------------------------------------------|
-| `layout`     | ✅       | Always `single` (shows sidebar and constrained content) |
+| `layout`     | ✅       | Always `single`. This field is **locked** — do not change it unless explicitly asked and permitted. |
 | `title`      | ✅       | Double-quoted string                                  |
 | `date`       | ✅       | `YYYY-MM-DD`                                          |
 | `categories` | ✅       | YAML list format. Broad topic buckets.                |
