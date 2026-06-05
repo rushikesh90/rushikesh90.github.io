@@ -92,7 +92,7 @@ defaults:
     values:
       layout: single
       toc: true
-      author_profile: true
+      author_profile: false
       read_time: true
       comments: true
       share: true
