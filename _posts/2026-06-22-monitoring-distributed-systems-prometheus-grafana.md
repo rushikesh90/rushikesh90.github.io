@@ -161,7 +161,7 @@ http_requests_total 1050
 
 Useful PromQL:
 
-```promql
+```text
 rate(http_requests_total[5m])
 ```
 
@@ -217,7 +217,7 @@ request_duration_seconds_count
 
 Useful query:
 
-```promql
+```text
 histogram_quantile(
   0.95,
   rate(request_duration_seconds_bucket[5m])
@@ -265,7 +265,7 @@ http_requests_total{
 
 Now Prometheus can answer:
 
-```promql
+```text
 sum by(status)(
     http_requests_total
 )
@@ -273,7 +273,7 @@ sum by(status)(
 
 or
 
-```promql
+```text
 sum by(endpoint)(
     rate(http_requests_total[5m])
 )
@@ -506,13 +506,13 @@ http://localhost:9090
 
 ### Request Rate
 
-```promql
+```text
 rate(http_requests_total[5m])
 ```
 
 ### Error Rate
 
-```promql
+```text
 rate(
   http_requests_total{
     status=~"5.."
@@ -522,13 +522,13 @@ rate(
 
 ### Memory Usage
 
-```promql
+```text
 process_resident_memory_bytes
 ```
 
 ### CPU Usage
 
-```promql
+```text
 rate(
   process_cpu_seconds_total[5m]
 )
@@ -536,7 +536,7 @@ rate(
 
 ### P95 Latency
 
-```promql
+```text
 histogram_quantile(
   0.95,
   sum(
@@ -597,13 +597,13 @@ Example panels:
 
 ### Traffic
 
-```promql
+```text
 rate(http_requests_total[5m])
 ```
 
 ### Latency
 
-```promql
+```text
 histogram_quantile(
   0.95,
   rate(
@@ -614,13 +614,13 @@ histogram_quantile(
 
 ### Memory
 
-```promql
+```text
 process_resident_memory_bytes
 ```
 
 ### Goroutines
 
-```promql
+```text
 go_goroutines
 ```
 
@@ -691,7 +691,7 @@ cache_misses_total
 
 ### High Error Rate
 
-```promql
+```text
 rate(
   http_requests_total{
       status=~"5.."
@@ -701,14 +701,14 @@ rate(
 
 ### High Memory
 
-```promql
+```text
 process_resident_memory_bytes
 > 8e9
 ```
 
 ### High Latency
 
-```promql
+```text
 histogram_quantile(
   0.95,
   rate(
